@@ -6,6 +6,9 @@ class CircleMover : MonoBehaviour
 	[SerializeField] LineRenderer lineRenderer;
 	[SerializeField] Transform movedObject;
 
+	[SerializeField] float startAngle = 0;
+	[SerializeField] float endAngle = 360;
+
 	[Space]
 	[SerializeField] Vector3 center;
 	[SerializeField] float radius = 10;
@@ -23,14 +26,7 @@ class CircleMover : MonoBehaviour
 
 	void Update()
 	{
-		lineRenderer.positionCount = segmentCount;
-
-		for (int i = 0; i < segmentCount; i++)
-		{
-			float angle = i * 360f / segmentCount;
-			Vector3 point = GetPointToAngel(angle);
-			lineRenderer.SetPosition(i, point);
-		}
+		DrawLine();
 
 		float input = Input.GetAxis("Horizontal");
 		currentAngle += input * angularSpeed * Time.deltaTime;
@@ -38,10 +34,24 @@ class CircleMover : MonoBehaviour
 		currentAngle = Mathf.Clamp(currentAngle, minAngle, maxAngle);
 		movedObject.position = GetPointToAngel(currentAngle);
 
-		if (lookOutside) 
+		if (lookOutside)
 		{
 			Vector3 lookDir = movedObject.position - center;
 			movedObject.rotation = Quaternion.LookRotation(lookDir);
+		}
+	}
+
+	void DrawLine()
+	{
+		lineRenderer.positionCount = segmentCount;
+
+		float fullAngle = endAngle - startAngle;
+
+		for (int i = 0; i < segmentCount; i++)
+		{
+			float angle = startAngle + (i * fullAngle / segmentCount);
+			Vector3 point = GetPointToAngel(angle);
+			lineRenderer.SetPosition(i, point);
 		}
 	}
 

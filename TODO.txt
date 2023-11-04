@@ -1,0 +1,49 @@
+Házi
+Ütközés
+Objektumok kommunikációja
+Fizika (Manuális)
+Fizika (Rigidbody)
+Sugárvetés
+Egér input
+Layer-ek
+
+Robbantás
+Particles
+Hangok
+Tömbök
+Csavart torony ??? (Házinak is adahtó)
+
+Joint-ok
+Listák
+foreach
+
+//--------------------------------------
+
+HÁZI
+GETTER METÓDUSOK
+
+Objektrumok létrehozása törlése (Lövöldözés)
+Prefabok
+
+Sebződés
+	Kikapcs, Bekapcs
+	Késleltetés => Coroutine
+	Random
+	
+ !!!! static  !!!
+
+
+// -------------------------------------
+
+UI
+Scene betöltés
+
+Anim
+Mentés
+Buildelés
+
+AnimCurve ?
+Saját típusok ?
+Platformer ?
+
+Saját házik
