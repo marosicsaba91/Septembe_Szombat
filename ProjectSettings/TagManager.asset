@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - TestLayer
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3753782835
+    locked: 0
+  - name: Gameplay
+    uniqueID: 529885557
+    locked: 0
+  - name: Forground
+    uniqueID: 1326580023
+    locked: 0
+  - name: UI
+    uniqueID: 3868704859
     locked: 0
